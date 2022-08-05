@@ -1,1 +1,73 @@
 /* You can add global styles to this file, and also import other style files */
+@import "~bootstrap-icons/font/bootstrap-icons.css";
+
+body {
+    background-color: #192537;
+    color: #e8e5e5;
+}
+
+.botaoGrande {
+    background-color: #b09e80;
+    color: #e8e5e5;
+    border-radius: 5rem;
+    padding: 1rem;
+    width: 20rem;
+    font-size: 1.5rem;
+    text-align: center;
+    font-weight: 400;
+    cursor: pointer;
+}
+
+.botaoPequeno {
+    background-color: #b09e80;
+    color: #e8e5e5;
+    border-radius: 5rem;
+    padding: 1rem;
+    width: 10rem;
+    font-size: 1.5rem;
+    text-align: center;
+    font-weight: 400;
+    cursor: pointer;
+}
+
+.botao {
+    background-color: #b09e80;
+    color: #e8e5e5;
+    border-radius: 5rem;
+    padding: 1rem;
+    width: 7rem;
+    height: 2rem;
+    font-size: 1rem;
+    text-align: center;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.pointer {
+    cursor: pointer;
+}
+
+input {
+    border-bottom: solid 1px #b09e80;
+}
+
+i {
+    font-size: 2rem;
+}
+
+.position {
+    position: absolute;
+    margin-left: auto;
+    margin-right: auto;
+    left: 0;
+    right: 0;
+    text-align: center;
+    width: 50vw;
+}
+
+/* 
+botao #b09e80
+letra #e8e5e5 
+*/

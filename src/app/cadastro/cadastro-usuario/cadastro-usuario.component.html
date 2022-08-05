@@ -1,0 +1,56 @@
+<div class="container mt-5">
+    <div *ngIf="alert" class="position alert alert-danger" role="alert">
+        Por favor, preencha todos os campos do cadatro
+    </div>
+    <div class="row justify-content-center">
+        <div class="col-auto">
+            <img src="/assets/img/clubHair.png" alt="image">
+        </div>
+    </div>
+    <div class="row justify-content-center">
+        <div class="col-auto">
+            <span>DADOS DO USUÁRIO</span>
+        </div>
+    </div>
+    <div class="row justify-content-center">
+        <div class="col-6">
+            <i class="bi bi-person-fill me-3"></i>
+            <input [(ngModel)]="usuario.nome" style="width:80%;" type="text" id="nome" placeholder="NOME COMPLETO">
+        </div>
+    </div>
+    <div class="row justify-content-center">
+        <div class="col-6">
+            <i class="bi bi-envelope me-3"></i>
+            <input [(ngModel)]="usuario.email" style="width:80%;" type="text" id="email" placeholder="E-MAIL">
+        </div>
+    </div>
+    <div class="row justify-content-center">
+        <div class="col-3">
+            <i class="bi bi-telephone-fill me-3"></i>
+            <input [(ngModel)]="usuario.telefone" style="width:80%;" type="text" id="tel" placeholder="TELEFONE/CEL">
+        </div>
+        <div class="col-3">
+            <i class="bi bi-person-lines-fill me-3"></i>
+            <input [(ngModel)]="usuario.cpf" style="width:60%;" type="text" id="cpf" placeholder="CPF">
+        </div>
+    </div>
+    <div class="row justify-content-center">
+        <div class="col-auto d-flex align-items-center ps-0">
+            <i class="bi bi-lock-fill pe-3"></i>
+            <div>
+                <input [(ngModel)]="usuario.senha" class="my-3" style="width:80%;" type="password" id="senha"
+                    placeholder="SENHA">
+                <input [(ngModel)]="senhaConfirmacao" class="my-2" style="width:80%;" type="password" id="confirmaSenha"
+                    placeholder="CONFIRME A SENHA">
+            </div>
+        </div>
+        <div class="col-1"></div>
+    </div>
+    <div class="row justify-content-center my-5">
+        <div class="col-auto">
+            <div class="botaoGrande pointer" (click)="cadastrar()">
+                <span>CADASTRAR</span>
+            </div>
+        </div>
+    </div>
+</div>

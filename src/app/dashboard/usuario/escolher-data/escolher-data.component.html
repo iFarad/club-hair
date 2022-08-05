@@ -1,0 +1,74 @@
+<div class="row">
+    <div class="col-7">
+        <div class="card">
+            <div class="row">
+                <div class="col-auto mx-auto">
+                    <span style="color: #7f7f7f ; width: 100%; margin-bottom: 2rem;">{{mes}}</span>
+                    <table>
+                        <thead>
+                            <td class="header">Segunda-Feira</td>
+                            <td class="header">Terça-Feira</td>
+                            <td class="header">Quarta-Feira</td>
+                            <td class="header">Quinta-Feira</td>
+                            <td class="header">Sexta-Feira</td>
+                            <td class="header">Sábado</td>
+                            <td class="header">Domingo</td>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let semana of tabelaDatas">
+                                <td *ngFor="let dia of semana" class="content" [class.bg]="!dia.diaNumero"
+                                    (click)="abrirDia(dia)">
+                                    {{dia.diaNumero}}<i *ngIf="dia.diaNumero" class="bi bi-circle-fill bolinha"
+                                        [ngStyle]="{'color': checarDisponibilidade(dia) ? 'yellowgreen' : 'red'}"></i>
+                                </td>
+                            </tr>
+                        </tbody>
+
+                    </table>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-5">
+        <div class="container-fluid extratoDetalhes" *ngIf="horariosDisponiveis">
+            <div class="row">
+                <div class="col-auto text-start my-2">
+                    <span>DATA</span>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-auto text-center my-2 white">
+                    <span>{{outputData.data | date: 'dd/MM/yyyy'}}</span>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-auto text-start my-2">
+                    <span>HORÁRIOS DISPONÍVEIS</span>
+                </div>
+            </div>
+            <div class="row justify-content-center">
+                <ng-container *ngFor="let horario of horarios">
+                    <div [ngStyle]="{'background-color': horario.hora == horarioSelecionado ? '#60d17b' : '#FFFFFF'}"
+                        *ngIf="!this.horariosIndisponiveis.includes(horario.hora)" class="col-2 text-center horario"
+                        (click)="selecionarHorario(horario.hora)
+                        ">
+                        {{horario.hora}}
+                    </div>
+                </ng-container>
+            </div>
+            <div class="row justify-content-around">
+                <div class="col-auto">
+                    <div class="botaoMedio mt-2" (click)="horariosDisponiveis = false">
+                        <span>CANCELAR</span>
+                    </div>
+                </div>
+                <div class=" col-auto">
+                    <div class="botaoMedio mt-2" (click)="agendar()">
+                        <span>AGENDAR</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

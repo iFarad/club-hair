@@ -1,0 +1,10 @@
+span {
+    font-weight: 600;
+    font-size: 1.25rem;
+    cursor: pointer;
+}
+
+.image {
+    margin-top: 15vh;
+    width: 80%;
+}

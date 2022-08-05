@@ -1,0 +1,21 @@
+<div class="card">
+    <div class="row justify-content-between">
+        <div class="col-auto text-start">
+            <span style="font-size: 1.5rem;">ESCOLHA SEU PROFISSIONAL</span>
+        </div>
+        <div class="col-auto text-end">
+            <img src="/assets/img/scissors.png" alt="image" class="w-30">
+        </div>
+    </div>
+    <div class="container-fluid w-auto overflow-auto">
+        <div class="row justify-content-center">
+            <div *ngFor="let funcionario of servico.funcionarios" class="col-6 my-3 teste"
+                (click)="escolherFuncionario(funcionario)">
+                <div class="servico">
+                    <span style="white-space: normal">{{funcionario | uppercase}}</span>
+                    <div class="quadrado">FOTO</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

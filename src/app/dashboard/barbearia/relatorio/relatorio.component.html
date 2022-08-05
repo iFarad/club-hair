@@ -1,0 +1,79 @@
+<div class="container">
+    <nav class="navbar navbar-expand-lg mb-5">
+        <div class="col-3 text-center">
+            <img width="250px" src="/assets/img/clubHair.png" alt="image">
+        </div>
+        <div class="col-6" id="navbarSupportedContent">
+            <div class="d-flex justify-content-center" role="search">
+                <input class="form-control" style="width:50%;" type="search" placeholder="PESQUISAR"
+                    aria-label="Search">
+            </div>
+        </div>
+        <div class="col-3 d-flex flex-nowrap justify-content-end">
+            <i class="bi bi-bell me-5"></i>
+            <i class="bi bi-person-circle me-2"></i>
+            <div class="row flex-wrap justify-content-end">
+                <span class="col-12">ANDRÉ LUIZ</span>
+                <span class="col-12 smallFont">GERENTE</span>
+            </div>
+        </div>
+    </nav>
+    <div class="row justify-content-center">
+        <div class="col-3 pt-5 px-0">
+            <div class="container-fluid">
+                <div class="row my-5">
+                    <div class="col ps-5 pointer" [routerLink]="['/servicos']" routerLinkActive="active">
+                        <i class="bi bi-circle-fill smallFont me-5"></i>
+                        <span>SERVIÇOS</span>
+                    </div>
+                </div>
+                <div class="row my-5">
+                    <div class="col ps-5 pointer" [routerLink]="['/agenda']" routerLinkActive="active">
+                        <i class="bi bi-circle-fill smallFont  me-5"></i>
+                        <span>AGENDA</span>
+                    </div>
+                </div>
+                <div class="row my-5" [routerLink]="['/extratos']" routerLinkActive="active">
+                    <div class="col ps-5 pointer">
+                        <i class="bi bi-circle-fill smallFont me-5"></i>
+                        <span>EXTRATO</span>
+                    </div>
+                </div>
+                <div class="row my-5" [routerLink]="['/relatorios']" routerLinkActive="active">
+                    <div class="col ps-5 pointer">
+                        <i class="bi bi-circle-fill smallFont me-5"></i>
+                        <span>RELATÓRIO</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-9 px-5">
+            <div class="container-fluid">
+                <div class="row my-4">
+                    <div class="col card">
+                        <div class="row mb-4">
+                            <div class="col-4">FUNCIONÁRIO</div>
+                            <div class="col-5">ATIVIDADE</div>
+                            <div class="col-2">AVALIAÇÃO</div>
+                        </div>
+                        <div class="row my-2" *ngFor="let relatorio of relatorios">
+                            <div class="col-4 d-flex align-items-center nota">{{relatorio.funcionario}}</div>
+                            <div class="col-5 pt-3">
+                                <div class="barraCinza">
+                                    <div class="barraVerde"
+                                        [ngStyle]="{'width': relatorio.atividade == 25 ? '25%' : relatorio.atividade == 50 ? '50%' : relatorio.atividade == 75 ? '75%' : '100%'}">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-2 d-flex align-items-center">
+                                <i class="bi bi-star-fill" style="color: #d4af37;"></i>
+                                <span class="nota ms-4">{{relatorio.avaliacao}} </span>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>

@@ -1,0 +1,91 @@
+<div *ngIf="!pagamentoFinalizado" class="row">
+    <div *ngIf="alert" class="position alert alert-danger" role="alert">
+        Por favor, preencha todos os campos do pagameto
+    </div>
+    <div class="col-7">
+        <div class="row">
+            <h5 class="col-auto">
+                NOME TITULAR
+            </h5>
+        </div>
+        <div class="row mb-4">
+            <div class="col">
+                <input [(ngModel)]="pagamento.nomeTitular" class="white">
+            </div>
+        </div>
+        <div class="row">
+            <h5 class="col-auto">
+                NÚMERO DO CARTÃO
+            </h5>
+        </div>
+        <div class="row mb-4">
+            <div class="col">
+                <input [(ngModel)]="pagamento.numeroCartao" class="white">
+            </div>
+        </div>
+        <div class="row">
+            <h5 class="col">
+                DATA VENCIMENTO
+            </h5>
+            <h5 class="col">
+                CVV
+            </h5>
+        </div>
+        <div class="row mb-4">
+            <div class="col">
+                <input [(ngModel)]="pagamento.dataVenc" class="white">
+
+            </div>
+            <div class="col">
+                <input [(ngModel)]="pagamento.cvv" class="white">
+            </div>
+        </div>
+        <div class="row mt-5">
+            <div class="col-auto botaoGrande" (click)="FinalizarPagamento()">FINALIZAR COMPRA</div>
+        </div>
+    </div>
+    <div class="col-5 d-flex align-items-center">
+        <div class="container-fluid extratoDetalhes">
+            <div class="row justify-content-center mb-4">
+                <div class="col-auto">
+                    <span>RESUMO</span>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col text-start my-4">
+                    <span class="pe-2">SERVIÇO:</span>
+                    <span>{{evento.servico}}</span>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col text-start mb-5">
+                    <span class="pe-2">VALOR:</span>
+                    <span>{{evento.valor}}</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div *ngIf="pagamentoFinalizado" class="row justify-content-center">
+    <div class=" fixedTop">
+        <h3>
+            OBRIGADO POR UTILIZAR O CLUB HAIR!
+        </h3>
+    </div>
+    <div class="row justify-content-center">
+        <div class="col-auto">
+            <i class="bi bi-check-circle-fill"></i>
+        </div>
+        <div class="col-5">
+            <h5>PAGAMENTO FEITO COM SUCESSO!</h5>
+            <h5 class="my-4">AS INFORMAÇÕES DO AGENDAMENTO FORAM ENVIADAS PARA O SEU E-MAIL</h5>
+        </div>
+    </div>
+    <div class="row justify-content-center">
+        <div class="col-auto resumo">
+            <span class="d-block">VALOR PAGO: {{evento.valor}}</span>
+            <span>CARTÃO FINAL: ****{{pagamento.numeroCartao}}</span>
+        </div>
+    </div>
+</div>

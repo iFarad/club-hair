@@ -1,0 +1,120 @@
+<div class="container mt-5">
+    <div *ngIf="alert" class="position alert alert-danger" role="alert">
+        Por favor, preencha todos os campos do cadatro
+    </div>
+    <div class="row justify-content-center my-5">
+        <div class="col-auto">
+            <img src="/assets/img/clubHair.png" alt="image">
+        </div>
+    </div>
+    <div class="row justify-content-center my-5">
+        <div class="col-auto">
+            <span>DADOS DO USUÁRIO</span>
+        </div>
+    </div>
+    <div class="row justify-content-center my-5">
+        <div class="col-5 d-flex">
+            <span class="me-3 text-nowrap">CNPJ</span>
+            <input [(ngModel)]="barbearia.cnpj" type="text" id="cnpj">
+        </div>
+        <div class="col-5 d-flex ">
+            <span class="me-3 text-nowrap">
+                RAZÃO SOCIAL
+            </span>
+            <input [(ngModel)]="barbearia.razaoSocial" type="text" id="razaoSocial">
+        </div>
+    </div>
+    <div class="row justify-content-center my-5">
+        <div class="col-5 d-flex">
+            <span class="me-3 text-nowrap">
+                NOME FANTASIA
+            </span>
+            <input [(ngModel)]="barbearia.nome" type="text" id="nome">
+        </div>
+        <div class="col-5 d-flex">
+            <span class="me-3 text-nowrap">
+                TELEFONE
+            </span>
+            <input [(ngModel)]="barbearia.telefone" type="text" id="tel">
+        </div>
+    </div>
+    <div class="row justify-content-center my-5">
+        <div class="col-5 d-flex">
+            <span class="me-3 text-nowrap">
+                CEP
+            </span>
+            <input [(ngModel)]="barbearia.cep" type="text" id="cep">
+        </div>
+        <div class="col-5 d-flex">
+            <span class="me-3 text-nowrap">
+                CIDADE/ESTADO
+            </span>
+            <input [(ngModel)]="barbearia.cidade" type="text" id="cidade">
+        </div>
+    </div>
+    <div class="row justify-content-center my-5">
+        <div class="col-5 d-flex">
+            <span class="me-3 text-nowrap">
+                ENDEREÇO
+
+            </span>
+            <input [(ngModel)]="barbearia.endereco" type="text" id="endereco">
+        </div>
+        <div class="col-5 d-flex">
+            <span class="me-3 text-nowrap">
+                NÚMERO
+
+            </span>
+            <input [(ngModel)]="barbearia.numero" type="text" id="numero">
+        </div>
+    </div>
+    <div class="row justify-content-center my-5">
+        <div class="col-5 d-flex">
+            <span class="me-3 text-nowrap">
+                EMAIL
+            </span>
+            <input [(ngModel)]="barbearia.email" type="text" id="complemento">
+        </div>
+        <div class="col-5 d-flex">
+            <span class="me-3 text-nowrap">
+                BAIRRO
+            </span>
+            <input [(ngModel)]="barbearia.bairro" type="text" id="bairro">
+        </div>
+    </div>
+    <div class="row justify-content-center my-5">
+        <div class="col-5 d-flex">
+            <span class="me-3 text-nowrap">
+                SENHA
+            </span>
+            <input [(ngModel)]="barbearia.senha" type="password" id="senha">
+        </div>
+        <div class="col-5 d-flex">
+            <span class="me-3 text-nowrap">
+                CONFIRME A SENHA
+            </span>
+            <input [(ngModel)]="senhaConfirmacao" type="password" id="confirmaSenha">
+        </div>
+    </div>
+    <div class="row justify-content-center my-5 ">
+        <div class="col-5 d-flex">
+            <span class="me-3 text-nowrap">
+                HORÁRIO DE FUNCIONAMENTO:
+            </span>
+            <input [(ngModel)]="barbearia.horarioAbertura" mask="Hh:m0" id="senha" placeholder="00:00">
+            <span class="mx-2 text-nowrap">
+                ÁS
+            </span>
+            <input [(ngModel)]="barbearia.horarioFechamento" mask="Hh:m0" id="confirmaSenha" placeholder="00:00">
+        </div>
+        <div class="col-5 d-flex">
+        </div>
+    </div>
+    <div class="row justify-content-center my-5 my-5">
+        <div class="col-auto">
+            <div class="botaoGrande pointer" (click)="cadastrar()">
+                <span>CADASTRAR</span>
+            </div>
+        </div>
+    </div>
+</div>

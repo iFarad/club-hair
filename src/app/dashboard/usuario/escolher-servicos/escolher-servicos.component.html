@@ -1,0 +1,18 @@
+<div class="card">
+    <div class="row justify-content-center">
+        <div class="col-auto text-center">
+            <img src="/assets/img/scissors.png" alt="image" class="w-50">
+            <h4 class="my-4">ESCOLHA SEU SERVIÇO</h4>
+        </div>
+    </div>
+    <div class="container-fluid w-auto overflow-auto">
+        <div class="row justify-content-center my-4">
+            <div *ngFor="let servico of servicos" class="col-12 my-3" (click)="escolherServico(servico)">
+                <div class="servico">
+                    <span>{{servico.nome}}</span>
+                    <span class="ms-auto">R$ {{servico.valor}}</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,64 @@
+.barbeariasCard {
+    background-color: #b09e80;
+    color: #e8e5e5;
+    border-radius: 1rem;
+    padding: .5rem 1rem;
+    margin: 2rem;
+    height: 8rem;
+    font-size: 1rem;
+    text-align: center;
+    display: flex;
+    align-items: stretch;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.barbeariasContainer {
+    display: flex;
+    justify-content: center;
+    height: 40vh;
+    overflow: auto;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.quadrado {
+    padding: 3rem;
+    width: 5rem;
+    height: 5rem;
+    border-radius: 1rem;
+    background-color: #FFFFFF;
+    color: black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: x-large;
+    font-weight: 500;
+}
+
+/* i {
+    font-size: 1.25rem;
+} */
+
+.bolinha {
+    margin-right: .5rem;
+    font-size: .85rem;
+}
+
+.estrela {
+    font-size: .85rem;
+    color: yellow;
+}
+
+.titulo {
+    font-weight: 500;
+    font-size: 1.5rem !important;
+}
+
+.voltar {
+    position: fixed;
+    bottom: 0;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}

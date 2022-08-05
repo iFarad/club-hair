@@ -1,0 +1,36 @@
+<div class="container mt-5">
+    <div class="row" style="height: 5rem ;"></div>
+    <div class="row justify-content-center my-4">
+        <div class="col-auto">
+            <img src="/assets/img/clubHair.png" alt="image">
+        </div>
+    </div>
+    <div class="row justify-content-center">
+        <div class="col-auto">
+            <div class="botaoGrande">
+                <span>ENRTAR</span>
+            </div>
+            <div class="d-flex my-3">
+                <div class="botaoPequeno me-2" [routerLink]="['/login-usuario']">
+                    <span>USUARIO</span>
+                </div>
+                <div class="botaoPequeno" [routerLink]="['/login-barbeiro']">
+                    <span>BARBEIRO</span>
+                </div>
+            </div>
+        </div>
+        <div class="col-auto">
+            <div class="botaoGrande">
+                <span>CADASTRE-SE</span>
+            </div>
+            <div class="d-flex my-3">
+                <div class="botaoPequeno me-2" [routerLink]="['/cadastro-usuario']">
+                    <span>USUARIO</span>
+                </div>
+                <div class="botaoPequeno" [routerLink]="['/cadastro-barbeiro']">
+                    <span>BARBEIRO</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

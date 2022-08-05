@@ -1,0 +1,85 @@
+<div class="container">
+    <nav class="navbar navbar-expand-lg mb-5">
+        <div class="col-3 text-center">
+            <img width="250px" src="/assets/img/clubHair.png" alt="image">
+        </div>
+        <div class="col-6" id="navbarSupportedContent">
+            <div class="d-flex justify-content-center" role="search">
+                <input class="form-control" style="width:50%;" type="search" placeholder="PESQUISAR"
+                    aria-label="Search">
+            </div>
+        </div>
+        <div class="col-3 d-flex flex-nowrap justify-content-end">
+            <i class="bi bi-bell me-5"></i>
+            <i class="bi bi-person-circle me-2"></i>
+            <div class="row flex-wrap justify-content-end">
+                <span class="col-12">ANDRÉ LUIZ</span>
+                <span class="col-12 smallFont">GERENTE</span>
+            </div>
+        </div>
+    </nav>
+    <div class="row justify-content-center">
+        <div class="col-3 pt-5 px-0">
+            <div class="container-fluid">
+                <div class="row my-5">
+                    <div class="col ps-5 pointer" [routerLink]="['/servicos']" routerLinkActive="active">
+                        <i class="bi bi-circle-fill smallFont me-5"></i>
+                        <span>SERVIÇOS</span>
+                    </div>
+                </div>
+                <div class="row my-5">
+                    <div class="col ps-5 pointer" [routerLink]="['/agenda']" routerLinkActive="active">
+                        <i class="bi bi-circle-fill smallFont  me-5"></i>
+                        <span>AGENDA</span>
+                    </div>
+                </div>
+                <div class="row my-5" [routerLink]="['/extratos']" routerLinkActive="active">
+                    <div class="col ps-5 pointer">
+                        <i class="bi bi-circle-fill smallFont me-5"></i>
+                        <span>EXTRATO</span>
+                    </div>
+                </div>
+                <div class="row my-5" [routerLink]="['/relatorios']" routerLinkActive="active">
+                    <div class="col ps-5 pointer">
+                        <i class="bi bi-circle-fill smallFont me-5"></i>
+                        <span>RELATÓRIO</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-6 px-5">
+            <div class="container-fluid">
+                <div class="row justify-content-between">
+                    <select class="form-select col mx-1" aria-label="select " [disabled]="false" [(ngModel)]="mes"
+                        (change)="alterarFiltro()">
+                        <option selected [value]="''">Selecionar</option>
+                        <option *ngFor="let mes of meses" [value]="mes.id">{{mes.nome}}</option>
+                    </select>
+                    <select class="form-select col mx-1" aria-label="select" [disabled]="mes == ''" [(ngModel)]="dia"
+                        (change)="alterarFiltro()">
+                        <option selected [value]="''">{{mes == '' ? 'Selecione um mês' : 'Selecionar'}}</option>
+                        <option *ngFor="let dia of dias" [value]="dia.id">{{dia.nome}}</option>
+                    </select>
+                </div>
+            </div>
+            <div class="row agendamentoContainer my-4">
+                <ng-container *ngFor="let agendamento of agendamentosVisualzados">
+                    <div class="d-flex w-100 agendamento my-3">
+                        <i class="bi bi-clock ps-2 pe-3"></i>
+                        <div class="col ps-2 agendamentoDesc">
+                            <div class="col">CLIENTE/HORÁRIO</div>
+                            <div class="col d-flex">
+                                <span class="fw-bold me-auto">{{agendamento.usuarioNome}}</span>
+                                <span class="fw-bold me-5">{{agendamento.horario.slice(0,5)}}</span>
+                            </div>
+                        </div>
+                    </div>
+                </ng-container>
+            </div>
+        </div>
+        <div class="col-3 px-0">
+
+        </div>
+    </div>
+
+</div>

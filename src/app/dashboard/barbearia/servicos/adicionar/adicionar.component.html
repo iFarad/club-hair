@@ -1,0 +1,42 @@
+<div class="container-fluid p-3">
+    <div *ngIf="alert" class="position alert alert-danger" role="alert">
+        Por favor, preencha todos os campos do cadatro
+    </div>
+    <div class="row">
+        <div class="col-auto w-100 text-start my-2">
+            <span>NOME</span>
+        </div>
+        <div class="col">
+            <input class="servico" [(ngModel)]="servico.nome" type="text" id="nomeServico">
+        </div>
+    </div>
+    <div class="row my-3">
+        <div class="col-auto w-100 text-start my-2">
+            <span>VALOR (R$)</span>
+        </div>
+        <div class="col">
+            <input class="servico" [(ngModel)]="servico.valor" type="text" id="valorServico">
+        </div>
+    </div>
+    <div class="row my-3">
+        <div class="col-auto w-100 text-start my-2">
+            <span>BARBEIRO</span>
+        </div>
+        <div *ngFor="let funcionario of servico.funcionarios" class="col-12 my-2">
+            <input class="servico" [ngModel]="funcionario" type="text" id="funcionariosServico" disabled>
+        </div>
+        <div class="col d-inline-flex my-2">
+            <input class="servico" [(ngModel)]="funcionario" type="text" id="funcionarioServico">
+            <i (click)="adicionarFuncionario()" class="bi bi-plus-square ms-2 pointer smallFont"></i>
+        </div>
+    </div>
+    <div class="row" style="height: 7rem;"></div>
+    <div class="row justify-content-around">
+        <div class="botao me-2">
+            <span (click)="cancelar.emit()">CANCELAR</span>
+        </div>
+        <div class="botao" (click)="salvar()">
+            <span>SALVAR</span>
+        </div>
+    </div>
+</div>

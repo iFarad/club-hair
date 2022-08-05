@@ -1,0 +1,47 @@
+.white {
+    background-color: #fff;
+    border-radius: 1rem;
+    color: #000;
+    font-size: 1.5rem;
+    font-weight: 500;
+    line-height: 1.5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding: 1rem;
+    height: 3rem;
+}
+
+.extratoDetalhes {
+    border-radius: 1rem;
+    padding: .5rem;
+    background-color: #3b4555;
+    min-height: 200px;
+    width: 65%;
+}
+
+.fixedTop {
+    position: fixed;
+    top: 0;
+    background-color: #192537;
+    height: 5rem;
+    width: auto;
+    display: flex;
+    align-items: center;
+}
+
+.resumo {
+    padding: .75rem 2rem;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 3;
+    color: #212529;
+    background-color: #b09e80;
+    background-clip: padding-box;
+    border: 1px solid #b09e80;
+    -webkit-appearance: none;
+    border-radius: 0.5rem;
+    color: #ffffff;
+    min-width: 300px;
+}
